@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InOrder | Home Organization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+   html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav x-data="{ isOpen: false }" class="border-b dark:border-gray-700">
+    <div class="container px-6 py-6 mx-auto lg:flex lg:justify-between lg:items-center">
+      <div class="flex items-center justify-between">
+        <a href="#">
+          <img class="w-auto h-6 sm:h-7" src="Assets/Logo-pink.png" alt="logo">
+        </a>
+
+        <!-- Mobile menu button -->
+        <div class="flex lg:hidden">
+          <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-00 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+            </svg>
+
+            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+      <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 mt-2 transition-all duration-300 ease-in-out bg-white shadow-md lg:bg-transparent lg:dark:bg-transparent lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+        <div class="flex flex-col space-y-5 lg:flex-row lg:items-center lg:space-y-0 lg:-px-8">
+          <a @click="isOpen = false" class="block font-medium text-gray-700 dark:text-gray-200 lg:mx-8 hover:text-gray-900 dark:hover:text-gray-400 hover:underline" href="#home">Home</a>
+          <a @click="isOpen = false" class="block font-medium text-gray-700 dark:text-gray-200 lg:mx-8 hover:text-gray-900 dark:hover:text-gray-400 hover:underline" href="#about">About Us</a>
+          <a @click="isOpen = false" class="block font-medium text-gray-700 dark:text-gray-200 lg:mx-8 hover:text-gray-900 dark:hover:text-gray-400 hover:underline" href="#testimonials">Feedback</a>
+
+          <a @click="isOpen = false" href="#contact" class="flex items-center justify-center px-5 py-2 text-sm font-medium tracking-wide text-center text-white capitalize transition-colors duration-300 transform bg-gray-700 rounded-lg hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+  Get in touch
+</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Declutter Your Home, Clear Your Mind</h2>
+      <p class="text-lg text-gray-600 mb-8">Professional home organizing services for closets, drawers, kitchens, and beyond.</p>
+      <a href="#contact" class="px-6 py-3 bg-[#E5B2AE] text-white  rounded-xl shadow hover:bg-[#E5B2AE]/80 transition">Book a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 px-6 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <img src="https://github.com/herrys613/InOrder/blob/main/Assets/%20Images/Image3.png?raw=true" alt="Organized home" class="rounded-2xl shadow-lg">
+      <div>
+        <h3 class="text-3xl font-semibold mb-4">Helping You Create Calm Spaces</h3>
+        <p class="text-gray-600 leading-relaxed">Hi! I’m a professional home organizer who comes to your home and helps you simplify, declutter, and redesign your living spaces so they work for you. Whether it’s your closet, kitchen drawers, or the whole house — I’m here to help make things functional and beautiful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-gray-100 py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10">Services I Offer</h3>
+      <div class="grid md:grid-cols-3 gap-10">
+
+        <!-- Closet Makeover -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+          <!-- Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-[#E5B2AE] mb-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-auto h-10 w-10 mb-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+          </svg>
+          <h4 class="text-xl font-semibold mb-2">Closet Organization</h4>
+          <p class="text-gray-600 text-sm">Declutter, categorize, and organize your closet for daily ease and joy.</p>
+        </div>
+
+        <!-- Kitchen Drawers -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-[#E5B2AE] mb-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-auto h-10 w-10 mb-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+          </svg>
+          <h4 class="text-xl font-semibold mb-2">Kitchen Drawers</h4>
+          <p class="text-gray-600 text-sm">Organize your drawers and cabinets so everything has a place</p>
+        </div>
+
+        <!-- Whole Home Declutter -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-10 w-10 text-[#E5B2AE] mb-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mx-auto h-10 w-1 mb-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+          </svg>
+          <h4 class="text-xl font-semibold mb-2">Whole Home Declutter</h4>
+          <p class="text-gray-600 text-sm">Let’s declutter and organize your home to create a peaceful, functional space</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 px-6 max-w-2xl mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-10">Client Love</h3>
+    <div class="space-y-8">
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <p class="text-gray-700 italic">“My closet was cluttered with things I didn’t even remember owning. Now it’s simple, spacious, and stress-free.”</p>
+        <p class="mt-2 text-sm text-gray-500">— Sury R.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <p class="text-gray-700 italic">“Our kitchen was a mess — now it's a dream! So grateful for the help.”</p>
+        <p class="mt-2 text-sm text-gray-500">— Henny K.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-white dark:bg-gray-900">
+    <div class="max-w-5xl px-6 py-12 mx-auto">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div class="flex flex-col justify-center">
+          <div>
+            <p class="font-medium text-[#E5B2AE] dark:text-white">Contact us</p>
+
+            <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Get in touch</h1>
+
+            <p class="mt-3 text-gray-500 dark:text-gray-400">Our friendly team is always here to chat.</p>
+          </div>
+
+          <div class="grid grid-cols-1 mt-10 gap-12 md:grid-cols-2">
+            <div>
+              <span class="inline-block p-3 text-[#E5B2AE] rounded-full bg-[#F7E0DF]/80 dark:bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </span>
+
+              <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+              <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
+              <p class="mt-2 text-sm text-[#E5B2AE] dark:text-white">hello@inorder.info</p>
+            </div>
+
+            <div>
+              <span class="inline-block p-3 text-[#E5B2AE] rounded-full bg-[#F7E0DF]/80 dark:bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+              </span>
+
+              <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
+              <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
+              <p class="mt-2 text-sm text-[#E5B2AE] dark:text-white">+1 (555) 000-0000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+          <form>
+            <div class="-mx-2 md:items-center md:flex">
+              <div class="flex-1 px-2">
+                <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
+                <input type="text" placeholder="John " class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
+              </div>
+
+              <div class="flex-1 px-2 mt-4 md:mt-0">
+                <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last Name</label>
+                <input type="text" placeholder="Doe" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
+              <input type="email" placeholder="johndoe@example.com" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
+            </div>
+
+            <div class="w-full mt-4">
+              <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Message</label>
+              <textarea class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-40 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
+            </div>
+
+            <button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-gray-600 capitalize transition-colors duration-300 transform bg-[#F7E0DF]/80 rounded-lg hover:bg-[#E5B2AE]/70 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+              Send message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#F7E0DF] dark:bg-gray-900">
+    <div class="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
+      <a href="#">
+        <img class="w-auto h-7" src="Assets/Logo-White.png" alt="logo">
+      </a>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
+        <a href="#" class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+          Home
+        </a>
+
+        <a href="#about" class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+          About Us
+        </a>
+
+        <a href="#contact" class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+          Contact
+        </a>
+        <a href="#" class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+        </a>
+
+        <a href="#" class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+          Privacy
+        </a>
+      </div>
+
+      <p class="mt-6 text-sm text-gray-500 lg:mt-0 dark:text-gray-400">
+        <script>
+          document.write(new Date().getFullYear())
+        </script> InOrder. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
