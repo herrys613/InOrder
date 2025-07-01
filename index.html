@@ -5,15 +5,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InOrder | Home Organization</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <style>
   [x-cloak] {
     display: none !important;
   }
-   html {
+
+  html {
     scroll-behavior: smooth;
+  }
+
+  /* For carousel smooth fade animation */
+  .carousel-item {
+    transition: opacity 0.7s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .carousel-item.active {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
   }
 </style>
 
@@ -24,7 +38,7 @@
     <div class="container px-6 py-6 mx-auto lg:flex lg:justify-between lg:items-center">
       <div class="flex items-center justify-between">
         <a href="#">
-          <img class="w-auto h-6 sm:h-7" src="Assets/Logo-pink.png" alt="logo">
+          <img class="w-auto h-6 sm:h-7" src="assets/images/logo_pink.png" alt="logo">
         </a>
 
         <!-- Mobile menu button -->
@@ -49,8 +63,8 @@
           <a @click="isOpen = false" class="block font-medium text-gray-700 dark:text-gray-200 lg:mx-8 hover:text-gray-900 dark:hover:text-gray-400 hover:underline" href="#testimonials">Feedback</a>
 
           <a @click="isOpen = false" href="#contact" class="flex items-center justify-center px-5 py-2 text-sm font-medium tracking-wide text-center text-white capitalize transition-colors duration-300 transform bg-gray-700 rounded-lg hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-  Contact Us
-</a>
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
@@ -68,7 +82,7 @@
   <!-- About -->
   <section id="about" class="py-16 px-6 max-w-5xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <img src="Assets/Images/Image3.png" alt="Organized home" class="rounded-2xl shadow-lg">
+      <img src="assets/images/about_image.png" alt="Organized home" class="rounded-2xl shadow-lg">
       <div>
         <h3 class="text-3xl font-semibold mb-4">Helping You Create Calm Spaces</h3>
         <p class="text-gray-600 leading-relaxed">Hi! I’m a professional home organizer who comes to your home and helps you simplify, declutter, and redesign your living spaces so they work for you. Whether it’s your closet, kitchen drawers, or the whole house — I’m here to help make things functional and beautiful.</p>
@@ -77,7 +91,7 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="bg-gray-100 py-20 px-6">
+  <section id="services" class="bg-gray-100/80 py-20 px-6">
     <div class="max-w-5xl mx-auto text-center">
       <h3 class="text-3xl font-bold mb-10">Services We Offer</h3>
       <div class="grid md:grid-cols-3 gap-10">
@@ -114,8 +128,13 @@
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="py-20 px-6 max-w-2xl mx-auto">
-    <h3 class="text-3xl font-bold text-center mb-10">Client Love</h3>
+  <section id="testimonials" class="py-12 px-6 max-w-2xl mx-auto">
+    <h3 class="text-3xl font-bold text-center">What clients saying</h3>
+    <div class="flex justify-center mx-auto mt-6  mb-10">
+      <span class="inline-block w-40 h-1 bg-[#E5B2AE] rounded-full"></span>
+      <span class="inline-block w-3 h-1 mx-1 bg-[#E5B2AE] rounded-full"></span>
+      <span class="inline-block w-1 h-1 bg-[#E5B2AE] rounded-full"></span>
+    </div>
     <div class="space-y-8">
       <div class="bg-white p-6 rounded-xl shadow-md">
         <p class="text-gray-700 italic">“My closet was cluttered with things I didn’t even remember owning. Now it’s simple, spacious, and stress-free.”</p>
@@ -128,8 +147,37 @@
     </div>
   </section>
 
+  <div id="carousel" class="relative px-6 py-12 max-w-2xl mx-auto w-full overflow-hidden rounded-xl">
+    <!-- Slides -->
+    <div class="relative h-52 sm:h-96">
+      <img src="assets/images/carousel_image_1.png" alt="image_1" class="carousel-item active w-full h-full object-cover rounded-xl" />
+      <img src="assets/images/carousel_image_2.png" alt="image_1" class="carousel-item w-full h-full object-cover rounded-xl" />
+      <img src="assets/images/carousel_image_3.png" alt="image_3" class="carousel-item w-full h-full object-cover rounded-xl" />
+    </div>
+
+    <!-- Indicators -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+      <button aria-label="Go to slide 1" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="0"></button>
+      <button aria-label="Go to slide 2" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="1"></button>
+      <button aria-label="Go to slide 3" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="2"></button>
+    </div>
+
+    <!-- Navigation buttons -->
+    <button id="prevBtn" aria-label="Previous slide" class="absolute top-1/2 left-8 transform -translate-y-1/2 bg-white/30 hover:bg-white text-gray-900 rounded-full p-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <button id="nextBtn" aria-label="Next slide" class="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white/30 hover:bg-white text-gray-900 rounded-full p-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
   <!-- Contact -->
-  <section id="contact" class="bg-white dark:bg-gray-900">
+  <section id="contact" class="bg-zinc-50 dark:bg-gray-900">
     <div class="max-w-5xl px-6 py-12 mx-auto">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div class="flex flex-col justify-center">
@@ -168,7 +216,7 @@
           </div>
         </div>
 
-        <div class="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+        <div class="p-4 py-6 rounded-lg md:p-8">
           <form>
             <div class="-mx-2 md:items-center md:flex">
               <div class="flex-1 px-2">
@@ -205,7 +253,7 @@
   <footer class="bg-[#F7E0DF] dark:bg-gray-900">
     <div class="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
       <a href="#">
-        <img class="w-auto h-7" src="Assets/Logo-White2.png" alt="logo">
+        <img class="w-auto h-7" src="assets/logo_white.png" alt="logo">
       </a>
 
       <div class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
@@ -236,6 +284,53 @@
     </div>
   </footer>
 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script>
+    (() => {
+      const carousel = document.getElementById('carousel');
+      const slides = carousel.querySelectorAll('.carousel-item');
+      const indicators = carousel.querySelectorAll('[data-slide-to]');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        indicators.forEach((btn, i) => {
+          btn.classList.toggle('bg-white', i === index);
+          btn.classList.toggle('bg-white/50', i !== index);
+        });
+        currentIndex = index;
+      }
+
+      function nextSlide() {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        showSlide(nextIndex);
+      }
+
+      function prevSlide() {
+        let prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
+      }
+      indicators.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const index = Number(btn.getAttribute('data-slide-to'));
+          showSlide(index);
+        });
+      });
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+      // Auto slide every 5 seconds
+      let autoSlide = setInterval(nextSlide, 5000);
+      // Pause on hover
+      carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
+      carousel.addEventListener('mouseleave', () => autoSlide = setInterval(nextSlide, 5000));
+    })();
+  </script>
 </body>
 
 </html>
