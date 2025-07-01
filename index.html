@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InOrder | Home Organization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <style>
   [x-cloak] {
@@ -147,12 +149,13 @@
     </div>
   </section>
 
-  <div id="carousel" class="relative px-6 py-12 max-w-2xl mx-auto w-full overflow-hidden rounded-xl">
+  <div class="px-6 py-12 max-w-2xl mx-auto">
+  <div id="carousel" class="relative">
     <!-- Slides -->
     <div class="relative h-52 sm:h-96">
-      <img src="assets/images/carousel_image_1.png" alt="image_1" class="carousel-item active w-full h-full object-cover rounded-xl" />
-      <img src="assets/images/carousel_image_2.png" alt="image_1" class="carousel-item w-full h-full object-cover rounded-xl" />
-      <img src="assets/images/carousel_image_3.png" alt="image_3" class="carousel-item w-full h-full object-cover rounded-xl" />
+      <img src="assets/images/carousel_image_1.png" alt="slide 1" class="carousel-item active w-full h-full object-cover rounded-xl" />
+      <img src="assets/images/carousel_image_2.png" alt="slide 2" class="carousel-item w-full h-full object-cover rounded-xl" />
+      <img src="assets/images/carousel_image_3.png" alt="slide 3" class="carousel-item w-full h-full object-cover rounded-xl" />
     </div>
 
     <!-- Indicators -->
@@ -175,6 +178,7 @@
       </svg>
     </button>
   </div>
+    </div>
 
   <!-- Contact -->
   <section id="contact" class="bg-zinc-50 dark:bg-gray-900">
@@ -283,9 +287,6 @@
       </p>
     </div>
   </footer>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script>
     (() => {
       const carousel = document.getElementById('carousel');
