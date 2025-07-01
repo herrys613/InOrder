@@ -150,35 +150,35 @@
   </section>
 
   <div class="px-6 py-12 max-w-2xl mx-auto">
-  <div id="carousel" class="relative">
-    <!-- Slides -->
-    <div class="relative h-52 sm:h-96">
-      <img src="assets/images/carousel_image_1.png" alt="slide 1" class="carousel-item active w-full h-full object-cover rounded-xl" />
-      <img src="assets/images/carousel_image_2.png" alt="slide 2" class="carousel-item w-full h-full object-cover rounded-xl" />
-      <img src="assets/images/carousel_image_3.png" alt="slide 3" class="carousel-item w-full h-full object-cover rounded-xl" />
+    <div id="carousel" class="relative">
+      <!-- Slides -->
+      <div class="relative h-52 sm:h-96">
+        <img src="assets/images/carousel_image_1.png" alt="slide 1" class="carousel-item active w-full h-full object-cover rounded-xl" />
+        <img src="assets/images/carousel_image_2.png" alt="slide 2" class="carousel-item w-full h-full object-cover rounded-xl" />
+        <img src="assets/images/carousel_image_3.png" alt="slide 3" class="carousel-item w-full h-full object-cover rounded-xl" />
+      </div>
+
+      <!-- Indicators -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <button aria-label="Go to slide 1" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="0"></button>
+        <button aria-label="Go to slide 2" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="1"></button>
+        <button aria-label="Go to slide 3" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="2"></button>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button id="prevBtn" aria-label="Previous slide" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/30 hover:bg-white text-gray-900 rounded-full p-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button id="nextBtn" aria-label="Next slide" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/30 hover:bg-white text-gray-900 rounded-full p-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
-
-    <!-- Indicators -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
-      <button aria-label="Go to slide 1" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="0"></button>
-      <button aria-label="Go to slide 2" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="1"></button>
-      <button aria-label="Go to slide 3" class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-slide-to="2"></button>
-    </div>
-
-    <!-- Navigation buttons -->
-    <button id="prevBtn" aria-label="Previous slide" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/30 hover:bg-white text-gray-900 rounded-full p-2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-        <path d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-
-    <button id="nextBtn" aria-label="Next slide" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/30 hover:bg-white text-gray-900 rounded-full p-2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-        <path d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
   </div>
-    </div>
 
   <!-- Contact -->
   <section id="contact" class="bg-zinc-50 dark:bg-gray-900">
@@ -221,30 +221,36 @@
         </div>
 
         <div class="p-4 py-6 rounded-lg md:p-8">
-          <form>
+          <form action="https://formsubmit.co/hershydesignit@gmail.com" method="POST">
+            <!-- Hidden FormSubmit Settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_template" value="basic">
+            <input type="hidden" name="_next" value="https://inorder.info/thanks.html">
+
             <div class="-mx-2 md:items-center md:flex">
               <div class="flex-1 px-2">
                 <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
-                <input type="text" placeholder="John " class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
+                <input type="text" name="firstName" placeholder="John " required class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
               </div>
 
               <div class="flex-1 px-2 mt-4 md:mt-0">
                 <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last Name</label>
-                <input type="text" placeholder="Doe" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
+                <input type="text" name="lastName" placeholder="Doe" required class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
               </div>
             </div>
 
             <div class="mt-4">
               <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
-              <input type="email" placeholder="johndoe@example.com" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
+              <input type="email" name="email" placeholder="johndoe@example.com" required class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" />
             </div>
 
             <div class="w-full mt-4">
               <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Message</label>
-              <textarea class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-40 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
+              <textarea name="message" required class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-40 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-[#E5B2AE] dark:focus:border-white-400 focus:ring-[#E5B2AE] focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
             </div>
 
-            <button class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-gray-600 capitalize transition-colors duration-300 transform bg-[#F7E0DF]/80 rounded-lg hover:bg-[#E5B2AE]/70 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+            <button type="submit" class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-gray-600 capitalize transition-colors duration-300 transform bg-[#F7E0DF]/80 rounded-lg hover:bg-[#E5B2AE]/70 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
               Send message
             </button>
           </form>
